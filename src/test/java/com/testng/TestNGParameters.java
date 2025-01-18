@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class TestNGParameters {
 
     @Parameters({"browser-name"})
-    @Test(groups = {"smoke", "regression"})
+    @Test( description = "Test Method 1",groups = {"smoke", "regression"})
     public void testMethod1(String browserName) {
         //Your selenium code goes here
         System.out.println("browserName = " + browserName);
@@ -15,7 +15,7 @@ public class TestNGParameters {
     }
 
     @Parameters({"browser-name"})
-    @Test(description = "Test Method 2")
+    @Test(description = "Test Method 2", groups = {"smoke", "regression"})
     public void testMethod2(String browserName) {
         //Your selenium code goes here
         System.out.println("TestNGParameters.testMethod2");
