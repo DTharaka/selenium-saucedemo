@@ -3,7 +3,7 @@
 
     <parameter name="browser-name" value="chrome"/>
     
-    <test name="test1" enabled="false">
+    <test name="test1" enabled="true">
         <!--
         <packages>
             <package name="com.saucedemo"/>
@@ -18,13 +18,13 @@
         </classes>
     </test>
 
-    <test name="test2" enabled="false">
+    <test name="test2" enabled="true">
         <classes>
             <class name="com.saucedemo.LogoutTest"/>
         </classes>
     </test>
 
-    <test name="test3-Test Level" enabled="false">
+    <test name="test3-Test Level" enabled="true">
         <parameter name="browser-name" value="firefox"/>
         <classes>
             <class name="com.testng.TestNGParameters">
@@ -35,7 +35,7 @@
         </classes>
     </test>
 
-    <test name="test4-Class Level" enabled="false">
+    <test name="test4-Class Level" enabled="true">
         <classes>
             <class name="com.testng.TestNGParameters">
                 <parameter name="browser-name" value="safari"/>
@@ -46,7 +46,7 @@
         </classes>
     </test>
 
-    <test name="test5-Method-level" enabled="false">
+    <test name="test5-Method-level" enabled="true">
         <classes>
             <class name="com.testng.TestNGParameters">
                 <methods>
@@ -66,14 +66,11 @@
                     <parameter name="browser-name" value="opera3"/>
                     <include name="testMethod2"/>
                 </methods>
-                <methods>
-                    <exclude name="testMethod2"/>
-                </methods>
             </class>
         </classes>
     </test>
 
-    <test name="test7" enabled="false">
+    <test name="test7" enabled="true">
         <groups>
             <run>
                 <include name="regression"/>
