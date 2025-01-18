@@ -1,0 +1,87 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="test-suite-sauce-labs-tests">
+
+    <parameter name="browser-name" value="chrome"/>
+    
+    <test name="test1" enabled="false">
+        <!--
+        <packages>
+            <package name="com.saucedemo"/>
+        </packages>
+        -->
+        <classes>
+            <class name="com.testng.TestNGParameters">
+                <methods>
+                    <include name="testMethod2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="test2" enabled="false">
+        <classes>
+            <class name="com.saucedemo.LogoutTest"/>
+        </classes>
+    </test>
+
+    <test name="test3-Test Level" enabled="false">
+        <parameter name="browser-name" value="firefox"/>
+        <classes>
+            <class name="com.testng.TestNGParameters">
+                <methods>
+                    <include name="testMethod2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="test4-Class Level" enabled="false">
+        <classes>
+            <class name="com.testng.TestNGParameters">
+                <parameter name="browser-name" value="safari"/>
+                <methods>
+                    <include name="testMethod2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="test5-Method-level" enabled="false">
+        <classes>
+            <class name="com.testng.TestNGParameters">
+                <methods>
+                    <parameter name="browser-name" value="edge"/>
+                    <include name="testMethod2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="test6" enabled="true">
+        <parameter name="browser-name" value="opera1"/>
+        <classes>
+            <class name="com.testng.TestNGParameters">
+                <parameter name="browser-name" value="opera2"/>
+                <methods>
+                    <parameter name="browser-name" value="opera3"/>
+                    <include name="testMethod2"/>
+                </methods>
+                <methods>
+                    <exclude name="testMethod2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="test7" enabled="false">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.testng.TestNGParameters"/>
+        </classes>
+    </test>
+
+</suite>
