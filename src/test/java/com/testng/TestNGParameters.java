@@ -1,4 +1,5 @@
 package com.testng;
+import org.testng.Assert;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -14,11 +15,12 @@ public class TestNGParameters {
     }
 
     @Parameters({"browser-name"})
-    @Test
+    @Test(description = "Test Method 2")
     public void testMethod2(String browserName) {
         //Your selenium code goes here
         System.out.println("TestNGParameters.testMethod2");
         System.out.println("browserName = " + browserName);
+        Assert.fail("Forcing test to be failed");
     }
 
     @Parameters({"browser-name"})
