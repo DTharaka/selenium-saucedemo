@@ -3,6 +3,7 @@ package com.saucedemo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -35,6 +36,19 @@ public class FilterProductsTest {
 
         webDriver.findElement(By.cssSelector("select[data-test='product-sort-container']")).click();
         webDriver.findElement(By.cssSelector("option[value='lohi']")).click();
+
+    }
+
+    @Test
+    public void testFilterProductsUsingSelectClass() {
+
+        webDriver.findElement(By.id("user-name")).sendKeys("standard_user");
+        webDriver.findElement(By.id("password")).sendKeys("secret_sauce");
+        webDriver.findElement(By.id("login-button")).click();
+        Assert.assertEquals(webDriver.findElement(By.cssSelector("span[data-test='title']")).getText(), "Products");
+
+        Select selOption = new Select(webDriver.findElement(By.cssSelector("select[data-test='product-sort-container']")));
+        selOption.selectByValue("lohi");
 
     }
 }
